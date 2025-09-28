@@ -1,0 +1,116 @@
+/* --- Общие стили для всей страницы --- */
+* {
+    box-sizing: border-box; /* Упрощает работу с размерами */
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    /* САМОЕ ГЛАВНОЕ: создаем Grid-контейнер для всей страницы */
+    display: grid;
+    grid-template-columns: 250px 1fr; /* 1-я колонка (sidebar) 250px, 2-я (контент) займет остальное место */
+    grid-template-rows: auto 1fr auto; /* Шапка и футер по высоте контента, центр растягивается */
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+    min-height: 100vh; /* Минимальная высота - вся высота экрана */
+}
+
+.grid-item:hover img {
+    transform: scale(1.1); 
+}
+
+a {
+    color: #bb86fc;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* --- Стили для Header (Шапки) --- */
+.header {
+    grid-area: header; /* Помещаем в область 'header' */
+    padding: 15px 30px;
+    color: white;
+    background-color: #1f1f1f;
+    border-bottom: 1px solid #333;
+    display: flex; /* Используем Flexbox для выравнивания элементов внутри шапки */
+    justify-content: space-between; /* Разносим элементы по краям */
+    align-items: center;
+}
+.header h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+.header nav a {
+    margin-left: 20px;
+}
+
+/* --- Стили для Sidebar (Боковой панели) --- */
+.sidebar {
+    grid-area: sidebar; /* Помещаем в область 'sidebar' */
+    padding: 20px;
+    background-color: #1f1f1f;
+    border-right: 1px solid #333;
+}
+.sidebar h3 {
+    margin-top: 0;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+/* --- Стили для Main (Основного контента) --- */
+.gallery-center {
+  display: grid;
+  grid-template-columns: repeat(3, 250px);
+  grid-template-rows: repeat(3, 250px);
+  gap: 20px;
+  justify-content: center; /* центрируем по горизонтали */
+  align-content: center;   /* центрируем по вертикали */
+}
+.gallery-center div {
+  position: relative;
+}
+.gallery-center img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.gallery-center span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  text-align: center;
+  opacity: 0;
+  transition: 0.3s;
+  padding: 5px;
+  border-radius: 0 0 8px 8px;
+}
+.gallery-center div:hover span {
+  opacity: 1;
+}
+
+
+/* --- Стили для Footer (Подвала) --- */
+.footer {
+    grid-area: footer; /* Помещаем в область 'footer' */
+    padding: 20px;
+    text-align: center;
+    background-color: #1f1f1f;
+    border-top: 1px solid #333;
+    font-size: 0.9em;
+}
+

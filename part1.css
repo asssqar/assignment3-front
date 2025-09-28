@@ -1,0 +1,90 @@
+/* Общие стили */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* 🔹 Task 0. Навигационная панель */
+.navbar {
+  grid-area: header; /* Помещаем в область 'header' */
+    padding: 15px 30px;
+    color: white;
+    background-color: #124dd7;
+    border-bottom: 1px solid #333;
+    display: flex; /* Используем Flexbox для выравнивания элементов внутри шапки */
+    justify-content: space-between; /* Разносим элементы по краям */
+    align-items: center;
+}
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+.nav-links a:hover {
+  color: #ffc107; /* жёлтый при наведении */
+}
+
+/* 🔹 Task 1. Ряд карточек */
+.card-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: stretch; /* одинаковая высота карточек */
+  margin: 40px auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+.card {
+  flex: 1;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s;
+}
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.card h3 {
+  font-size: 20px;
+  margin: 15px;
+}
+.card p {
+  flex: 1;
+  margin: 0 15px 15px;
+  color: #555;
+}
+.card button {
+  margin: 15px;
+  padding: 10px;
+  border: none;
+  background: #0d6efd;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.card button:hover {
+  background: #0b5ed7;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}

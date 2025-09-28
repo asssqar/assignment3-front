@@ -1,0 +1,143 @@
+/* ===== Part 3. Portfolio ===== */
+/* Общие стили */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header (Flexbox) */
+.portfolio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(18, 77, 217);
+  color: white;
+  padding: 15px 30px;
+}
+.portfolio-header .logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+.portfolio-header .nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  transition: 0.3s;
+}
+.portfolio-header .nav-links a:hover {
+  color: #ffc107;
+}
+
+/* Main (Grid layout) */
+.portfolio-main {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* проекты 2/3, инфо 1/3 */
+  gap: 20px;
+  padding: 30px;
+  background: #f8f9fa;
+}
+
+/* Projects */
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.project-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+
+  /* Flex внутри карточки */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+.project-card h3 {
+  margin-bottom: 5px;
+}
+.project-card p {
+  flex: 1;
+  color: #555;
+}
+.project-card button {
+  align-self: flex-start;
+  padding: 8px 15px;
+  background: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.project-card button:hover {
+  background: #0b5ed7;
+}
+
+/* Sidebar */
+.info {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.info h3 {
+  margin: 15px 0 10px;
+}
+.info ul {
+  list-style: none;
+  padding: 0;
+}
+.info ul li {
+  margin: 5px 0;
+  padding-left: 15px;
+  position: relative;
+}
+.info ul li::before {
+  content: "•";
+  color: #0d6efd;
+  position: absolute;
+  left: 0;
+}
+
+/* Footer */
+.portfolio-footer {
+  background: #0d6efd;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+
+.my-button {
+    /* Внешний вид кнопки */
+    display: inline-block;
+    padding: 5px 12px;
+    width: 50px;
+    font-size: 14px;
+    background-color: #007bff; /* Синий фон */
+    color: white; /* Белый текст */
+    border-radius: 5px; /* Скруглённые углы */
+    border: none; /* Убираем рамку */
+    cursor: pointer; /* Курсор в виде руки */
+
+    /* Убираем подчёркивание у ссылки */
+    text-decoration: none;
+    
+    /* Эффект при наведении */
+    transition: background-color 0.3s ease;
+}
+
+.my-button:hover {
+    background-color: #0056b3; /* Фон станет темнее при наведении */
+}
